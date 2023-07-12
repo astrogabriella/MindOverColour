@@ -9,68 +9,87 @@
   </head>
   <body>
     <!-- NEED A RULE AND TO ADJUST THE CENTERING OF THE TEXT -->
-    <header class="container">
+    <div class="container">
       <div id="img"></div>
       <h1 id="logo">Mind Over Colour</h1>
-    </header>
-    <div id="pageBackground">
-      <div class="gameDefaultContainer">
-        <div class="stats">
-          <div id="timerContainer">
-            <p id="clockText">20</p>
-          </div>
-          <p id="score">0</p></div>
-          <div class="textTitle">
-            <h2>Mind Over Colour</h2></div>
-        <p id="rules">
-          Prepare to put your perception
-          skills to the test in this mind-bending game: Mind Over Colour. You'll be
-          presented with colourful words and given four options to choose from.
-          Your task is to select the word that matches the given colour, while
-          completely ignoring the color of the word itself. Sounds tricky,
-          right? Every correct answer will earn you an extra second on the
-          clock, giving you more time to tackle the next challenge. <br><br>But beware!
-          For every wrong answer, one precious second will be deducted from your
-          remaining time. So be careful and think quickly&#33;
-        </p>
-
-        <div class="userNameContainer">
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Enter Username"
-          />
-          <span id="charCount" style="font-size: x-small">12/12</span>
-        </div>
-
-        <h2 id="randColor">Start</h2>
-
-        <div class="buttonContainer">
-          <label class="radioButtons">
-            Colour 1
-            <input type="radio" name="radio" />
-          </label>
-          <label class="radioButtons">
-            Colour 2
-            <input type="radio" name="radio" />
-          </label>
-          <label class="radioButtons">
-            Colour 3
-            <input type="radio" name="radio" />
-          </label>
-          <label class="radioButtons">
-            Colour 4
-            <input type="radio" name="radio" />
-          </label>
-        </div>
-
-       
-        
-
-
-        <input type="reset" value="Reset Stats" id="resetBtn" />
+    </div>
+  
+    <div id="gameDefaultContainer">
+      <div class="textTitle1">
+        <h2>Mind Over Colour</h2>
       </div>
+      <p id="rules">
+        Prepare to put your perception skills to the test in this
+        mind&ndash;bending game: Mind Over Colour. You'll be presented with
+        colourful words and given four options to choose from. Your task is to
+        select the word that matches the given color, while completely ignoring
+        the color of the word itself. Sounds tricky, right? Sharpen your skills
+        and try to beat your high score. <br /><br />
+        But beware! For every wrong answer, one precious second will be deducted
+        from your remaining time. So stay focused, trust your instincts, and
+        strive for a new record!&#33;
+      </p>
+
+      <div class="userNameContainer">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter Username"
+        />
+        <span id="charCount" style="font-size: x-small">12/12</span>
+      </div>
+      <h2 id="startBtn">Start</h2>
+      <!-- randColour -->
+      <input type="reset" value="Reset Stats" class="resetBtn" />
+    </div>
+
+    <div id="gamePlayContainer" class="boxBackground">
+      <div class="stats">
+        <div id="timerContainer">
+          <p id="clockText">20</p>
+        </div>
+        <p id="score">0</p>
+      </div>
+      <div class="textTitle">
+        <h2>Mind Over Colour</h2>
+      </div>
+
+      <div id="quizWord">QuizWord</div>
+      <div class="buttonContainer">
+        <label class="radioButtons">
+          Colour 1
+          <input type="radio" name="radio" />
+        </label>
+        <label class="radioButtons">
+          Colour 2
+          <input type="radio" name="radio" />
+        </label>
+        <label class="radioButtons">
+          Colour 3
+          <input type="radio" name="radio" />
+        </label>
+        <label class="radioButtons">
+          Colour 4
+          <input type="radio" name="radio" />
+        </label>
+      </div>
+      <input type="reset" value="Reset Stats" class="resetBtn" />
+    </div>
+
+    <div id="gameEndContainer">
+      <div><h2 id="endText">End of Round</h2></div>
+
+      <div id="results">
+        <h3 id="scoreText"></h3>
+        <h3 id="highScoreText"></h3>
+      </div>
+
+      <input type="reset" value="Reset Stats" class="resetBtn" />
+    </div>
+
+    <div class="footer">
+      <p>&copy;Gabriella Masiha 2023</p>
     </div>
   </body>
 </html>

@@ -1,0 +1,26 @@
+TODO:
+
+
+Keep track of highest score and show it on end page and when local storage has a name for user, add to landing page
+Add a Try again button to end page
+
++1 animation when you get a score
+-1 from timer when you get it wrong
+
+remove Start from hiding behind the background in both game states
+limit character use to 12 and give a prompt
+add a enter button next to username to click and make functional
+
+make page responsive
+
+
+Cosmetics: 
+
+- change cursor on elements
+- update the radio button backgrounds to match the text colour of quizWord for difficulty  
+
+
+
+COMPLETED TASKS:
+Fix header not being part of the body border
+Add score to the end of the game to end page
