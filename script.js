@@ -16,13 +16,14 @@ const welcomeMessage = document.getElementsByClassName("welcomeUsername");
 const scoreText = document.getElementById("scoreText");
 const highScoreText = document.getElementById("highScoreText");
 const clockText = document.getElementById("clockText");
-
+const repeatBtn = document.getElementById("repeatBtn");
+const savedHS = document.getElementById("savedHS");
 
 
 //Global constants
 
-let countdown = 20;
-let lastScore = 0;
+let countdown = 120;
+
 
 const maxCharacters = 12;
 
@@ -33,11 +34,18 @@ function userNameLength() {
   let inputLength = userNameField.value.length;
   counter = inputLength;
   if (counter > 12) {
-    charCount.style.color = "red";
+    counter = maxCharacters - inputLength;
+
   }
+  if (counter < 12) {
+  }
+
+
+
   if (inputLength === 0) {
     charCount.style.color = "white";
   }
+
   charCount.textContent = `${counter}/${maxCharacters}`;
   userNameField.value = userNameField.value.replace(/\s/g, "");
 
@@ -48,6 +56,8 @@ function userNameLength() {
 
 //This function triggers the game, adds scaling on the first quizWord and triggers the timer function every second
 function triggerGame() {
+  startBtn.removeEventListener("click", triggerGame);
+  score.textContent = `Score: ${lastScore}`
   startBtn.style.visibility = "hidden";
   gameDefaultContainer.style.visibility = "hidden";
   gamePlayContainer.style.visibility = "visible";
@@ -61,8 +71,9 @@ function triggerGame() {
 //Decrements the clock by one, sets a time warning colour and stops at 0s.
 function updateTimer() {
   clockText.textContent = countdown;
-  if (countdown > 5){
-  clockText.style.color="white"}
+  if (countdown > 5) {
+    clockText.style.color = "white";
+  }
   countdown = countdown - 1;
 
   if (countdown < 5) {
@@ -78,7 +89,42 @@ function updateTimer() {
 
 //Returns a random colour word
 function getRandColorText() {
-  let colourArray = ["aqua", "black", "blue", "brown", "coral", "crimson", "cyan", "chocolate","fuchsia", "tan", "gold", "gray", "green", "indigo", "lime", "magenta", "maroon", "navy", "olive", "orange", "orchid", "pink", "plum", "purple", "red", "salmon", "sienna", "teal", "tomato", "turquoise", "lavender", "violet", "wheat", "yellow",]
+  let colourArray = [
+    "aqua",
+    "black",
+    "blue",
+    "brown",
+    "coral",
+    "crimson",
+    "cyan",
+    "chocolate",
+    "fuchsia",
+    "tan",
+    "gold",
+    "gray",
+    "green",
+    "indigo",
+    "lime",
+    "magenta",
+    "maroon",
+    "navy",
+    "olive",
+    "orange",
+    "orchid",
+    "pink",
+    "plum",
+    "purple",
+    "red",
+    "salmon",
+    "sienna",
+    "teal",
+    "tomato",
+    "turquoise",
+    "lavender",
+    "violet",
+    "wheat",
+    "yellow",
+  ];
   let word = colourArray[Math.floor(Math.random() * colourArray.length)];
   return word.toLowerCase();
 }
@@ -102,69 +148,84 @@ function setBtnTexts() {
     }
     usedIndices.push(randomIndex);
     radioBtn[i].textContent = answerArray[randomIndex];
+    radioBtn[i].style.backgroundColor = answerArray[randomIndex];
   }
   setTextColor(answerArray[0]);
-  
+
   setTextContent(answerArray[1]);
 }
-
 
 //Change the colours
 function setTextColor(color) {
   quizWord.style.color = color;
-  for (let i = 0; i <radioBtn.length;i++){
-  radioBtn[i].style.backgroundColor = color;
-}}
-
-
+}
 
 //Sets the text content of quizWord
 function setTextContent(word) {
   quizWord.textContent = word;
 }
 
+
+let lastScore = 0;
+
 //For each button clicked per quiz word, check if the word matches the quiz word, then add a point to the score
 function currentScore() {
+  integerScore=lastScore
   if (this.textContent === quizWord.textContent) {
-    integerScore = parseInt(score.textContent);
     integerScore += 1;
-    score.textContent = integerScore;
     lastScore = integerScore;
+    score.textContent = `Score: ${integerScore}`
+
   } else {
-    countdown = countdown - 1
-    clockText.style.color="red"
+    countdown += - 1;
+    clockText.textContent = countdown;
+    clockText.style.color = "red";
   }
-
 }
-
-
-
 
 //End of each round toggle game state containers
 function endOfRound() {
+  saveScore();
+  // highScore();
   gamePlayContainer.style.visibility = "hidden";
   gameEndContainer.style.visibility = "visible";
   scoreText.innerText = `Score: ${lastScore}`;
 }
+
+// function highScore() {
+//   const storedScore = localStorage.getItem("score");
+// if (lastScore > storedScore) {
+//   const highScore = "highScore";
+//   const highScoreValue = lastScore;
+//   localStorage.setItem(highScore, highScoreValue);
+//   highScoreText.innerText = `High score: ${highScoreValue}`;
+// }}
 
 //Clears data when reset stats is clicked
 const resetStats = () => {
   localStorage.clear();
   location.reload();
   startBtn.style.visibility = "hidden";
+
 };
 
 //Saves names to storage
 function saveToLS() {
-  const key = "username";
+  const name = "username";
   const value = userNameField.value;
   if (value) {
-    localStorage.setItem(key, value);
+    localStorage.setItem(name, value);
   }
 }
 
+function saveScore() {
+  const score = "score";
+  const result = lastScore;
+  localStorage.setItem(score, result);
+}
+
 function handleUsername(e) {
-  if (userNameField.value.length > 0) {
+  if (userNameField.value.length > 0 || userNameField.value.length <= 12) {
     if (e.key === "Enter" || e.target.id == "submitBtn") {
       saveToLS();
       submitBtn.style.visibility = "hidden";
@@ -172,20 +233,29 @@ function handleUsername(e) {
       charCount.style.visibility = "hidden";
       startBtn.style.visibility = "visible";
       submitBtn.style.visibility = "hidden";
+      userNameField.removeEventListener("input", userNameLength);
+      submitBtn.removeEventListener("click", handleUsername);
+      userNameField.removeEventListener("keypress", handleUsername);
     }
   }
-  if (userNameField.length>12){
-
-  
+  if (userNameField.value.length > 12) {
+    if (e.key === "Enter" || e.target.id == "submitBtn") {
+      console.log("username invalid");
+    }
   }
 }
 
-
-
 ////////////////////////////////EVENT LISTENERS/////////////////////////////////////
 
-//checks length of username
+//Checks the length of username
 userNameField.addEventListener("input", userNameLength);
+//ADDED REMOVED
+//Save data when user clicks on submit and has a valid input
+submitBtn.addEventListener("click", handleUsername);
+//ADDED REMOVED
+//Save data when user presses enter and has a valid input
+userNameField.addEventListener("keypress", handleUsername);
+//ADDED REMOVED
 
 //Add to score when the correct radio button is clicked and trigger the scaling animation of quizWord
 for (let i = 0; i < radioBtn.length; i++) {
@@ -203,22 +273,25 @@ window.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
   if (localStorage.length > 0) {
     startBtn.style.visibility = "visible";
+    savedHS.style.visibility="visible";
     const value = localStorage.getItem("username");
     textTitle[0].textContent = `Welcome back ${value}!`;
     userNameContainer[0].remove();
+    userNameField.removeEventListener("input", userNameLength);
+    submitBtn.removeEventListener("click", handleUsername);
+    userNameField.removeEventListener("keypress", handleUsername);
   }
 });
 
-//Checks the length of username
-userNameField.addEventListener("input", userNameLength);
-
 //Trigger the game on clicking start
 startBtn.addEventListener("click", triggerGame);
+//ADDED REMOVED
 
 //For each reset button, clear data when it is clicked
 for (let i = 0; i < resetBtn.length; i++) {
   resetBtn[i].addEventListener("click", resetStats);
 }
+//REMAINS CONSISTENT
 
-submitBtn.addEventListener("click", handleUsername);
-userNameField.addEventListener("keypress", handleUsername);
+//Not Working
+//repeatBtn.addEventListener("click", triggerGame)

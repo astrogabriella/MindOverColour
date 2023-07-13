@@ -10,20 +10,25 @@
   <body>
     <!-- NEED A RULE AND TO ADJUST THE CENTERING OF THE TEXT -->
     <div class="container">
-      <div id="img"></div>
+     
       <h1 id="logo">Mind Over Colour</h1>
+       <div id="img"></div>
     </div>
   
     <div id="gameDefaultContainer">
-      <div class="textTitle1">
-        <h2>Mind Over Colour</h2>
-      </div>
+
+        <div id="userDetails">
+        <h2 class="textTitle1">Mind Over Colour</h2>
+        <h2 id="savedHS">High Score:</h2>
+        </div>
+
+
       <p id="rules">
         Prepare to put your perception skills to the test in this
         mind&ndash;bending game: Mind Over Colour. You'll be presented with
         colourful words and given four options to choose from. Your task is to
-        select the word that matches the given color, while completely ignoring
-        the color of the word itself. Sounds tricky, right? Sharpen your skills
+        select the word that matches the given colour, while completely ignoring
+        the colour of the word itself. Sounds tricky, right? Sharpen your skills
         and try to beat your high score. <br /><br />
         But beware! For every wrong answer, one precious second will be deducted
         from your remaining time&#33;
@@ -52,7 +57,7 @@
         <div id="timerContainer">
           <p id="clockText">20</p>
         </div>
-        <p id="score">0</p>
+        <p id="score"></p>
       </div>
       <div class="textTitle">
         <h2>Mind Over Colour</h2>
@@ -81,15 +86,17 @@
     </div>
 
     <div id="gameEndContainer">
-      <div><h2 id="endText">End of Round</h2></div>
-
+    <h2 id="endText">End of Round</h2>
       <div id="results">
         <h3 id="scoreText"></h3>
         <h3 id="highScoreText"></h3>
+      
       </div>
-
-      <input type="reset" value="Reset Stats" class="resetBtn" />
+      <div id="buttons">
+      <input type="submit" value="Try Again" class="repeatBtn" id="repeatBtn" />
+      <input type="reset" value="Reset Stats" class="resetBtn" id="resetBtn" />
     </div>
+  </div>
 
     <div class="footer">
       <p>&copy;Gabriella Masiha 2023</p>
