@@ -15,16 +15,18 @@
 }
 
 body {
-  height: 100vh; 
+  height: 100vh;
   display: grid;
   grid-template-areas:
     "logoHeader"
+    "."
     "game"
+    "."
     "footer";
-    grid-template-rows: 9% 55% 10%;
-    gap: 13%;
+  grid-template-rows: 8% 14% 58% 10% 10%;
   justify-items: center;
   background: linear-gradient(140deg, #2d0a6d, #5e347582);
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -58,6 +60,8 @@ body {
 }
 
 .radioButtons {
+  width: 160px;
+  text-align: center;
   grid-area: section3;
   padding-left: 5px;
   padding-right: 5px;
@@ -88,6 +92,7 @@ body {
   overflow: hidden;
   width: 100%;
   grid-area: section3;
+  gap: 15px;
 }
 
 .timeWarning {
@@ -96,11 +101,15 @@ body {
 }
 
 #timerContainer,
-#score{
+#score {
   font-size: 26px;
   color: #e6ff03;
 }
 
+.textTitle1,
+.textTitle {
+  font-size: 30px;
+}
 .stats {
   display: flex;
   width: 100%;
@@ -111,8 +120,8 @@ body {
 
 #quizWord {
   grid-area: section2;
-    text-align: center;
-    font-size: 140px;
+  text-align: center;
+  font-size: 140px;
 }
 
 .footer {
@@ -132,16 +141,12 @@ body {
   grid-area: nameOrStart;
   visibility: hidden;
   cursor: pointer;
-  
-  font-size: 68px;
-}
-.textTitle1 {
 
-  font-size: 30px;
+  font-size: 68px;
 }
 
 .textTitle {
-  font-size: 24px;
+  grid-area: gameTitle;
 }
 
 #gameDefaultContainer {
@@ -154,7 +159,7 @@ body {
   filter: drop-shadow(3px 4px 6px black);
   grid-template-rows: 12% 48% 24% 11% 6%;
   grid-template-areas:
-  "userDetails"
+    "userDetails"
     "rules"
     "nameOrStart"
     "."
@@ -166,16 +171,19 @@ body {
   background-color: #25193b;
 }
 
-#userDetails{
+#userDetails {
   grid-area: userDetails;
   display: flex;
   width: 100%;
-  flex-direction: column;
   align-content: center;
   align-items: center;
   justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 6px;
 }
-#savedHS{
+
+#savedHS {
   color: #e6ff03;
   font-size: 17px;
   visibility: hidden;
@@ -193,7 +201,7 @@ body {
   grid-template-rows: 5% 6% 14% 43% 15% 13% 4%;
   grid-template-areas:
     "header"
-    "userDetails"
+    "gameTitle"
     "."
     "section2"
     "section3"
@@ -229,15 +237,14 @@ body {
   background-color: #25193b;
 }
 
-#repeatBtn{
+#repeatBtn {
   border: none;
   background: transparent;
   cursor: pointer;
   font-size: 15px;
 }
 
-
-#buttons{
+#buttons {
   grid-area: buttons;
   display: flex;
   width: 100%;
@@ -252,6 +259,10 @@ body {
 
 #results {
   grid-area: results;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
 }
 
 #rules {
@@ -313,3 +324,121 @@ body {
     transform: scale(1);
   }
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 400px) {
+  body {
+    grid-template-rows: 11% 7% 60% 10% 0%;
+  }
+
+  #img {
+    width: 16%;
+    margin-left: 10px;
+  }
+  #logo {
+    font-size: 34px;
+  }
+
+  #quizWord {
+    font-size: 80px;
+  }
+
+  .textTitle1 {
+    font-size: 23px;
+  }
+
+  .textTitle {
+    font-size: 22px;
+  }
+
+  #rules,
+  #username,
+  #results,
+  #repeatBtn,
+  #submitBtn,
+  #savedHS,
+  .resetBtn {
+    font-size: 18px;
+    gap: 2px;
+  }
+
+  #endText {
+    font-size: 40px;
+  }
+
+  #startBtn {
+    font-size: 57px;
+  }
+  #rules {
+    padding: 12px;
+  }
+
+  .radioButtons {
+    flex: 1;
+    font-size: 15px;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #gameDefaultContainer {
+    width: 355px;
+    height: 510px;
+    grid-template-rows: 12% 68% 12% 4% 4%;
+  }
+
+  #gamePlayContainer {
+    grid-template-rows: 5% 10% 10% 25% 45.5%;
+    flex-direction: column;
+    height: 510px;
+    width: 355px;
+  }
+  .radioButtons {
+    font-size: 28px;
+  }
+
+  .buttonContainer {
+    height: 193px;
+    width: 100%;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    align-items: stretch;
+
+
+  }
+
+  #gameEndContainer {
+    width: 300px;
+  }
+}
+
+/* @media screen and (min-width: 401px) and (max-width:500px){
+
+body{
+  justify-items: center;
+  justify-content: center;
+
+
+}
+
+.container{
+  justify-content: center;
+  align-items: center;
+}
+
+#gameDefaultContainer {
+  grid-template-rows: 12% 48% 24% 11% 6%;
+  width: 64%;
+  height: 580px;
+}
+#logo{
+
+  font-size: 36px;
+} */
+
+/* } */

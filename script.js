@@ -21,7 +21,6 @@ const savedHS = document.getElementById("savedHS");
 
 //Global constants
 let lastScore = 0;
-let countdown = 10;
 let timerInterval;
 
 const maxCharacters = 12;
@@ -57,7 +56,7 @@ lastScore=0
   gameEndContainer.style.visibility="hidden"
   clockText.classList.remove("timeWarning")
 
-  clockText.textContent = 20;
+  clockText.textContent = 120;
   clockText.style.color = "white";
   
   score.textContent = `Score: ${lastScore}`;
@@ -197,8 +196,8 @@ function highScore() {
   const storedScore = localStorage.getItem("highScore") || 0;
   if (lastScore > storedScore) {
     localStorage.setItem("highScore", lastScore);
-    highScoreText.innerText = `High score: ${lastScore}`;
-  } else highScoreText.innerText = `High score: ${storedScore}`;
+    highScoreText.innerText = `HighScore: ${lastScore}`;
+  } else highScoreText.innerText = `High Score: ${storedScore}`;
 }
 
 //Clears data when reset stats is clicked
