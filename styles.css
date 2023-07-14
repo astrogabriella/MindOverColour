@@ -79,6 +79,7 @@ body {
   color: black;
   text-align: center;
   text-shadow: none;
+  
 }
 .buttonContainer {
   display: flex;
@@ -152,18 +153,18 @@ body {
 #gameDefaultContainer {
   height: 500px;
   grid-area: game;
-  width: 40%;
+  width: 34%;
   border: 7px solid #ffffff1f;
   display: grid;
   border-radius: 15px;
   filter: drop-shadow(3px 4px 6px black);
-  grid-template-rows: 12% 48% 24% 11% 6%;
+  grid-template-rows: 14% 52% 22% 9% 2%;
   grid-template-areas:
-    "userDetails"
-    "rules"
-    "nameOrStart"
-    "."
-    "reset";
+      "userDetails"
+      "rules"
+      "nameOrStart"
+      "."
+      "reset";
   grid-template-columns: 100%;
   align-items: center;
   justify-items: center;
@@ -224,7 +225,7 @@ body {
   border: 7px solid #ffffff1f;
   display: grid;
   filter: drop-shadow(3px 4px 6px black);
-  grid-template-rows: 22% 48% 10%;
+  grid-template-rows: 22% 56% 17%;
   gap: 4%;
   grid-template-areas:
     "header"
@@ -259,6 +260,7 @@ body {
 
 #results {
   grid-area: results;
+  gap: 6px;
   display: flex;
   width: 100%;
   align-items: center;
@@ -408,37 +410,9 @@ body {
     align-content: space-around;
     flex-direction: column;
     align-items: stretch;
-
-
   }
 
   #gameEndContainer {
     width: 300px;
   }
 }
-
-/* @media screen and (min-width: 401px) and (max-width:500px){
-
-body{
-  justify-items: center;
-  justify-content: center;
-
-
-}
-
-.container{
-  justify-content: center;
-  align-items: center;
-}
-
-#gameDefaultContainer {
-  grid-template-rows: 12% 48% 24% 11% 6%;
-  width: 64%;
-  height: 580px;
-}
-#logo{
-
-  font-size: 36px;
-} */
-
-/* } */

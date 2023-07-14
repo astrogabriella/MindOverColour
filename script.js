@@ -51,14 +51,14 @@ function userNameLength() {
 
 //This function triggers the game, adds scaling on the first quizWord and triggers the timer function every second
 function triggerGame() {
-  countdown=20
-lastScore=0
-  gameEndContainer.style.visibility="hidden"
-  clockText.classList.remove("timeWarning")
+  countdown = 20;
+  lastScore = 0;
+  gameEndContainer.style.visibility = "hidden";
+  clockText.classList.remove("timeWarning");
 
   clockText.textContent = 120;
   clockText.style.color = "white";
-  
+
   score.textContent = `Score: ${lastScore}`;
   startBtn.style.visibility = "hidden";
   gameDefaultContainer.style.visibility = "hidden";
@@ -176,10 +176,10 @@ function currentScore() {
     score.textContent = `Score: ${integerScore}`;
   } else {
     countdown += -1;
-    if (countdown > 0){
+    if (countdown > 0) {
       clockText.textContent = countdown;
-    clockText.style.color = "red";
-    } else (clockText.textContent = 0)
+      clockText.style.color = "red";
+    } else clockText.textContent = 0;
   }
 }
 
@@ -230,11 +230,6 @@ function handleUsername(e) {
   if (userNameField.value.length > 12) {
     if (e.key === "Enter" || e.target.id == "submitBtn") {
       console.log("username invalid");
-
-
-
-
-
     }
   }
 }
@@ -284,9 +279,6 @@ for (let i = 0; i < resetBtn.length; i++) {
   resetBtn[i].addEventListener("click", resetStats);
 }
 
-repeatBtn.addEventListener("click", ()=>{
-
-triggerGame()
-
-}
-)
+repeatBtn.addEventListener("click", () => {
+  triggerGame();
+});
