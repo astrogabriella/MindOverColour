@@ -22,7 +22,6 @@ const savedHS = document.getElementById("savedHS");
 //Global constants
 let lastScore = 0;
 let timerInterval;
-
 const maxCharacters = 12;
 
 /////////////////////////////////////FUNCTIONS/////////////////////
@@ -216,6 +215,7 @@ function saveToLS() {
   }
 }
 
+//limits username length
 function handleUsername(e) {
   if (userNameField.value.length > 0 && userNameField.value.length <= 12) {
     if (e.key === "Enter" || e.target.id == "submitBtn") {
@@ -278,7 +278,7 @@ startBtn.addEventListener("click", triggerGame);
 for (let i = 0; i < resetBtn.length; i++) {
   resetBtn[i].addEventListener("click", resetStats);
 }
-
+//Triggers game on clicking try again at the end of the round
 repeatBtn.addEventListener("click", () => {
   triggerGame();
 });

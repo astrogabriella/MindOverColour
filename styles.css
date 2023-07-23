@@ -329,7 +329,7 @@ body {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 576px) {
   body {
     grid-template-rows: 11% 7% 60% 10% 0%;
   }
@@ -415,4 +415,264 @@ body {
   #gameEndContainer {
     width: 300px;
   }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px){
+  body {
+    grid-template-rows: 11% 7% 60% 10% 0%;
+  }
+
+  #img {
+    width: 16%;
+    margin-left: 10px;
+  }
+  #logo {
+    font-size: 34px;
+  }
+
+  #quizWord {
+    font-size: 80px;
+  }
+
+  .textTitle1 {
+    font-size: 23px;
+  }
+
+  .textTitle {
+    font-size: 22px;
+  }
+
+  #rules,
+  #username,
+  #results,
+  #repeatBtn,
+  #submitBtn,
+  #savedHS,
+  .resetBtn {
+    font-size: 18px;
+    gap: 2px;
+  }
+
+  #endText {
+    font-size: 40px;
+  }
+
+  #startBtn {
+    font-size: 57px;
+  }
+  #rules {
+    padding: 12px;
+  }
+
+  .radioButtons {
+    flex: 1;
+    font-size: 15px;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #gameDefaultContainer {
+    width: 355px;
+    height: 510px;
+    grid-template-rows: 12% 68% 12% 4% 4%;
+  }
+
+  #gamePlayContainer {
+    grid-template-rows: 5% 10% 10% 25% 45.5%;
+    flex-direction: column;
+    height: 510px;
+    width: 355px;
+  }
+  .radioButtons {
+    font-size: 28px;
+  }
+
+  .buttonContainer {
+    height: 193px;
+    width: 100%;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #gameEndContainer {
+    width: 300px;
+  }
+
+  .container{
+    justify-content: center;
+    align-items: center;
+  }
+} 
+
+
+
+@media only screen and (min-width: 769px) and (max-width: 992px){
+  body {
+    grid-template-rows: 7% 13% 58% 11% 9%;
+  }
+
+  #img {
+    width: 16%;
+    margin-left: 10px;
+    height: 92%;
+  }
+  #logo {
+    font-size: 59px;
+  }
+
+  #quizWord {
+    font-size: 80px;
+  }
+
+  .textTitle1 {
+    font-size: 2.5em;
+  }
+
+  .textTitle {
+    font-size: 25px;
+  }
+
+  #rules,
+  #username,
+  #results,
+  #repeatBtn,
+  #submitBtn,
+  #savedHS,
+  .resetBtn {
+    font-size: 18px;
+    gap: 2px;
+  }
+
+  #endText {
+    font-size: 40px;
+  }
+
+  #startBtn {
+    font-size: 57px;
+  }
+  #rules {
+    padding: 12px;
+    font-size: 1.5em;
+  }
+
+  .radioButtons {
+    flex: 1;
+    font-size: 15px;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #gameDefaultContainer {
+    width: 60%;
+    height: 103%;
+    grid-template-rows: 11% 67% 12% 5% 4%;
+
+}
+  
+
+  #gamePlayContainer {
+    grid-template-rows: 5% 10% 10% 25% 45.5%;
+    flex-direction: column;
+    width: 55%;
+    height: 103%;
+  }
+  .radioButtons {
+    font-size: 28px;
+  }
+
+  .buttonContainer {
+    height: 193px;
+    width: 100%;
+    gap: 7px;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #gameEndContainer {
+    width: 300px;
+  }}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px){
+  #logo {
+    font-size: 2.6em;
+}
+#img {
+ 
+    width: 16%;
+    margin-left: 10px;
+    height: 97%;
+}
+
+#gameDefaultContainer {
+  width: 60%;
+  height: 103%;
+  grid-template-rows: 11% 62% 12% 11% 4%;
+}
+#rules {
+ 
+  padding: 12px;
+  font-size: 1.1em;
+
+}
+.textTitle1, .textTitle {
+  font-size: 1.3em;
+}
+#startBtn{
+  font-size: 2.9em;
+}
+
+#gamePlayContainer {
+  grid-template-rows: 5% 10% 10% 25% 45.5%;
+  flex-direction: column;
+  width: 64%;
+  height: 103%;
+}
+
+
+.radioButtons {
+  font-size: 2.0em;
+}
+  
+}
+@media only screen and (min-width: 1201px) {
+
+  body {
+    grid-template-rows: 9% 7% 60% 13% 10%;
+  
+  }
+  .textTitle1, .textTitle {
+    font-size: 2.0em;
+}
+#gameDefaultContainer{
+  grid-template-rows: 14% 59% 17% 7% 2%;
+}
+#rules {
+  grid-area: rules;
+  font-size: 1.1em;
+
+}
+#gamePlayContainer {
+  grid-template-rows: 5% 10% 10% 25% 45.5%;
+  flex-direction: column;
+  width: 64%;
+  height: 103%;
+}
+
+
+.radioButtons {
+  font-size: 2.0em;
+}
+
+
 }
