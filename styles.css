@@ -645,7 +645,7 @@ body {
 }
   
 }
-@media only screen and (min-width: 1201px) {
+/* @media only screen and (min-width: 1201px) {
 
   body {
     grid-template-rows: 9% 7% 60% 13% 10%;
@@ -675,4 +675,4 @@ body {
 }
 
 
-}
+} */
