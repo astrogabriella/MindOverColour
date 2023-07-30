@@ -55,7 +55,7 @@ function triggerGame() {
   gameEndContainer.style.visibility = "hidden";
   clockText.classList.remove("timeWarning");
 
-  clockText.textContent = 120;
+  clockText.textContent = 20;
   clockText.style.color = "white";
 
   score.textContent = `Score: ${lastScore}`;

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
-* { font-size: clamp(14px,1.5vw,18px);
+* {
   margin: 0px;
   font-family: "Karla", sans-serif;
   color: white;
@@ -8,27 +8,28 @@
   user-select: none;
   text-shadow: 2px 2px black;
 }
+html {
+  font-size: clamp(14px, 1.5vw, 18px);
+}
 
 body {
   height: 100vh;
   display: grid;
   grid-template-areas:
-      "logoHeader"
-      "."
-      "game"
-      "."
-      "footer";
-      grid-template-rows: 8% 1fr auto 1fr auto;
+    "logoHeader"
+    "."
+    "game"
+    "."
+    "footer";
+  grid-template-rows: 8% clamp(1%, 10%, 15%) auto 1fr auto;
   justify-items: center;
   background: linear-gradient(140deg, #2d0a6d, #5e347582);
   background-repeat: no-repeat;
 }
 
-.bgColor{
+.bgColor {
   background-color: #25193b;
-
 }
-
 
 .container {
   grid-area: logoHeader;
@@ -37,72 +38,63 @@ body {
   gap: 10px;
   flex-direction: row;
   align-items: center;
-
 }
 
-.dropShadow{
+.dropShadow {
   filter: drop-shadow(2px 2px 5px black);
 }
 
 #img {
-  width: clamp(30px,65px,65px);
+  height: 100%;
   aspect-ratio: 1/1;
   background-image: url(logo3.png);
   background-repeat: no-repeat;
   background-size: contain;
-
 }
 
 #logo {
   cursor: default;
-  font-size: clamp(2rem,4vw,3rem);
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  padding-left: 0.5em;
 }
 
-
-
-
-.textTitle1, .textTitle{
-  font-size: clamp(1rem,2vw,1.5rem);
-
+.textTitle1 {
+  font-size: clamp(1.8rem, 2vw, 3rem);
+  text-align: center;
 }
 
+.textTitle {
+  font-size: clamp(2rem, 2vw, 3rem);
+}
 
-
-
+.buttonContainer {
+  grid-area: section3;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 5px;
+}
 
 .radioButtons {
-  width: 160px;
   text-align: center;
-  grid-area: section3;
-  padding-left: 5px;
-  padding-right: 5px;
-  
   cursor: pointer;
   animation: slide 1s ease-in-out;
-  display: grid;
-  padding: 0px 10px 2px 10px;
   border-radius: 10px;
+  width: clamp(100px, 150px, 200px);
+  padding: 10px;
+  font-size: 2rem;
 }
 
 #username {
   color: black;
   text-align: center;
   text-shadow: none;
-  
+  grid-area: textbox;
+  background-color: #ffffff;
+  border: #403652 3px solid;
 }
-.buttonContainer {
-  display: flex;
-  height: 50px;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: center;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  gap: 30px;
-  overflow: hidden;
-  width: 100%;
-  grid-area: section3;
-  gap: 15px;
+#charCount {
+  grid-area: charSize;
 }
 
 .timeWarning {
@@ -112,12 +104,9 @@ body {
 
 #timerContainer,
 #score {
-  
+  font-size: clamp(1.5em, 1.5em, 2em);
   color: #e6ff03;
 }
-
-
-
 
 .stats {
   display: flex;
@@ -130,7 +119,8 @@ body {
 #quizWord {
   grid-area: section2;
   text-align: center;
-  
+  font-size: clamp(5em, 4vw, 10em);
+  font-weight: bold;
 }
 
 .footer {
@@ -145,8 +135,18 @@ body {
   grid-area: nameOrStart;
   visibility: hidden;
   cursor: pointer;
-
-  
+  font-size: clamp(2em, 2.3em, 4em);
+  width: 8rem;
+  height: 2.5rem;
+  text-align: center;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #403652;
+  border: none;
+  color: white;
+  box-shadow: 1px 1px 1px #000000cf;
 }
 
 .textTitle {
@@ -160,15 +160,16 @@ body {
   border: 7px solid #ffffff1f;
   display: grid;
   border-radius: 15px;
-  grid-template-rows: auto 1fr auto 1fr auto 1fr auto;
+  grid-template-rows: 14% 2% auto 1fr auto 1fr auto 10px;
   grid-template-areas:
-      "userDetails"
-      "."
-      "rules"
-      "."
-      "nameOrStart"
-      "."
-      "reset";
+    "userDetails"
+    "."
+    "rules"
+    "."
+    "nameOrStart"
+    "."
+    "reset"
+    ".";
   align-items: center;
   justify-items: center;
   padding: 1em;
@@ -189,29 +190,32 @@ body {
 
 #savedHS {
   color: #e6ff03;
-  
+  font-size: clamp(1em, 1.5em, 2em);
   visibility: hidden;
 }
 
 #gamePlayContainer {
   border: 7px solid #ffffff00;
+  max-width: 40em;
+  min-height: 450px;
   grid-area: game;
   visibility: hidden;
   border-radius: 15px;
   display: grid;
-  grid-template-rows: 5% 6% 14% 43% 15% 13% 4%;
+  grid-template-rows: auto 0.4fr auto 1fr auto 1fr auto 1fr auto 28px;
   grid-template-areas:
     "header"
+    "."
     "gameTitle"
     "."
     "section2"
+    "."
     "section3"
     "."
-    "reset";
-  grid-template-columns: 100%;
+    "reset"
+    ".";
   align-items: center;
   justify-items: center;
-  padding: 1em;
 }
 
 #gameEndContainer {
@@ -229,14 +233,18 @@ body {
     "buttons";
   align-items: center;
   justify-items: center;
-  padding: 1em;
+  height: 50%;
+  padding: 1em 4em;
 }
 
 #repeatBtn {
   border: none;
   background: transparent;
   cursor: pointer;
-  
+  font-size: clamp(0.4em, 1.1em, 1.5em);
+  background-color: #403652;
+  border-radius: 5px;
+  color: white;
 }
 
 #buttons {
@@ -245,36 +253,46 @@ body {
   width: 100%;
   justify-content: space-around;
   flex-direction: row;
+  gap: 10%;
 }
 
 #submitBtn {
-  color: black;
-  text-shadow: none;
+  grid-area: submit;
+  background-color: #403652;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: clamp(1em, 1.1em, 3em);
+}
+
+.scoreColour {
+  color: #66ff03;
 }
 
 #results {
   grid-area: results;
   gap: 6px;
   display: flex;
-  width: 100%;
+  font-size: clamp(1.5em, 1.9em, 2.1em);
   align-items: center;
   flex-direction: column;
 }
 
 #rules {
   grid-area: rules;
-
+  font-size: clamp(1em, 1.2em, 5em);
 }
 
 .userNameContainer {
   grid-area: nameOrStart;
   padding-top: 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: space-around;
-  align-items: flex-end;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "textbox submit"
+    "charSize . ";
+  gap: 0px 7px;
+  justify-items: end;
 }
 
 #endText {
@@ -285,7 +303,10 @@ body {
   border: none;
   background: transparent;
   cursor: pointer;
-  
+  font-size: clamp(0.4em, 1.1em, 1.5em);
+  background-color: #403652;
+  border-radius: 5px;
+  color: white;
 }
 
 @keyframes slide {
@@ -318,5 +339,17 @@ body {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #gamePlayContainer {
+    width: 40em;
+  }
+}
+
+@media only screen and (max-width: 899px) {
+  #gamePlayContainer {
+    grid-template-rows: auto 0.4fr auto 1fr auto 1fr auto 1fr auto 24px;
   }
 }

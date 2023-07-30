@@ -12,13 +12,12 @@
     <div class="container dropShadow bgColor">
       <h1 id="logo">Mind Over Colour</h1>
       <div id="img" class="dropShadow"></div>
-      
     </div>
 
     <div id="gameDefaultContainer" class="dropShadow bgColor">
       <div id="userDetails">
-        <h2 class="textTitle1">Mind Over Colour</h2>
-        <h2 id="savedHS"></h2>
+        <div class="textTitle1">Rules of the Game</div>
+        <div id="savedHS"></div>
       </div>
 
       <p id="rules">
@@ -43,25 +42,23 @@
         <span id="charCount">0/12</span>
         <input type="submit" id="submitBtn" value="Submit" name="submitBtn" />
       </div>
-
       <h2 id="startBtn">Start</h2>
+
       <input type="reset" value="Reset Stats" class="resetBtn" />
     </div>
 
     <div id="gamePlayContainer" class="boxBackground dropShadow bgColor">
       <div class="stats">
         <div id="timerContainer">
-          <p id="clockText">20</p>
+          <div id="clockText">20</div>
         </div>
-        <p id="score"></p>
+        <div id="score"></div>
       </div>
-      <div class="textTitle">
-        <h2>Mind Over Colour</h2>
-      </div>
+      <div class="textTitle"></div>
 
       <div id="quizWord">QuizWord</div>
       <div class="buttonContainer">
-        <label class="radioButtons dropShadow ">
+        <label class="radioButtons dropShadow">
           Colour 1
           <input type="radio" name="radio" />
         </label>
@@ -85,8 +82,8 @@
       <h2 id="endText">End of Round</h2>
 
       <div id="results">
-        <h3 id="scoreText"></h3>
-        <h3 id="highScoreText"></h3>
+        <div id="scoreText" class="scoreColour"></div>
+        <div id="highScoreText" class="scoreColour"></div>
       </div>
 
       <div id="buttons">
