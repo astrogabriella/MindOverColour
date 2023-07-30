@@ -58,7 +58,7 @@ body {
   padding-left: 0.5em;
 }
 
-.textTitle1 {
+.gameHeading {
   font-size: clamp(1.8rem, 2vw, 3rem);
   text-align: center;
 }
@@ -345,6 +345,9 @@ body {
 @media only screen and (min-width: 900px) {
   #gamePlayContainer {
     width: 40em;
+  }  
+  #savedHS{
+    font-size: clamp(1em, 1.3em, 2em);
   }
 }
 
@@ -352,4 +355,5 @@ body {
   #gamePlayContainer {
     grid-template-rows: auto 0.4fr auto 1fr auto 1fr auto 1fr auto 24px;
   }
+
 }
