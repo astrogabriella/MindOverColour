@@ -1,17 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
 * {
+  box-sizing: border-box;
   margin: 0px;
-  font-family: "Karla", sans-serif;
-  color: white;
+ font-family: 'Comfortaa', cursive;
+ color: #f3f5f5;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  text-shadow: 2px 2px black;
+ 
 }
 html {
-  font-size: clamp(14px, 1.5vw, 18px);
+  font-size: clamp(14px, 1.5vw, 18px); 
 }
-
+/* vw (viewport width) units. */
 body {
   height: 100vh;
   display: grid;
@@ -23,13 +24,10 @@ body {
     "footer";
   grid-template-rows: 8% clamp(1%, 10%, 15%) auto 1fr auto;
   justify-items: center;
-  background: linear-gradient(140deg, #2d0a6d, #5e347582);
+  background: linear-gradient(45deg, #08212e,#2b386b);
   background-repeat: no-repeat;
 }
 
-.bgColor {
-  background-color: #25193b;
-}
 
 .container {
   grid-area: logoHeader;
@@ -40,17 +38,6 @@ body {
   align-items: center;
 }
 
-.dropShadow {
-  filter: drop-shadow(2px 2px 5px black);
-}
-
-#img {
-  height: 100%;
-  aspect-ratio: 1/1;
-  background-image: url(logo3.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
 
 #logo {
   cursor: default;
@@ -70,8 +57,7 @@ body {
 .buttonContainer {
   grid-area: section3;
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(4, auto);
   gap: 5px;
 }
 
@@ -80,10 +66,16 @@ body {
   cursor: pointer;
   animation: slide 1s ease-in-out;
   border-radius: 10px;
-  width: clamp(100px, 150px, 200px);
+  width: clamp(100px, 194px, 241px);
   padding: 10px;
   font-size: 2rem;
+  text-shadow: 2px 2px black;
 }
+
+
+
+
+
 
 #username {
   color: black;
@@ -95,6 +87,7 @@ body {
 }
 #charCount {
   grid-area: charSize;
+  font-size: 0.6em;
 }
 
 .timeWarning {
@@ -104,7 +97,7 @@ body {
 
 #timerContainer,
 #score {
-  font-size: clamp(1.5em, 1.5em, 2em);
+  font-size: clamp(1.0em, 1.0em, 2em);
   color: #e6ff03;
 }
 
@@ -119,8 +112,9 @@ body {
 #quizWord {
   grid-area: section2;
   text-align: center;
-  font-size: clamp(5em, 4vw, 10em);
+  font-size: clamp(7em, 4vw, 10em);
   font-weight: bold;
+  text-shadow: 2px 2px black;
 }
 
 .footer {
@@ -132,8 +126,8 @@ body {
 }
 
 #startBtn {
-  grid-area: nameOrStart;
   visibility: hidden;
+  grid-area: nameOrStart;
   cursor: pointer;
   font-size: clamp(2em, 2.3em, 4em);
   width: 8rem;
@@ -143,10 +137,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #403652;
   border: none;
   color: white;
-  box-shadow: 1px 1px 1px #000000cf;
 }
 
 .textTitle {
@@ -157,7 +149,6 @@ body {
   grid-area: game;
   max-width: 40em;
   min-height: 450px;
-  border: 7px solid #ffffff1f;
   display: grid;
   border-radius: 15px;
   grid-template-rows: 14% 2% auto 1fr auto 1fr auto 10px;
@@ -174,6 +165,7 @@ body {
   justify-items: center;
   padding: 1em;
   margin: 0 1em;
+  background-color: #25193b38;
 }
 
 #userDetails {
@@ -195,8 +187,7 @@ body {
 }
 
 #gamePlayContainer {
-  border: 7px solid #ffffff00;
-  max-width: 40em;
+  max-width: 53em;
   min-height: 450px;
   grid-area: game;
   visibility: hidden;
@@ -216,13 +207,13 @@ body {
     ".";
   align-items: center;
   justify-items: center;
+  background-color: #25193b38;
 }
 
 #gameEndContainer {
   grid-area: game;
   visibility: hidden;
   border-radius: 15px;
-  border: 7px solid #ffffff1f;
   display: grid;
   grid-template-rows: auto 1fr auto 1fr auto;
   grid-template-areas:
@@ -235,14 +226,14 @@ body {
   justify-items: center;
   height: 50%;
   padding: 1em 4em;
+  background-color: #25193b38;
 }
 
 #repeatBtn {
   border: none;
   background: transparent;
   cursor: pointer;
-  font-size: clamp(0.4em, 1.1em, 1.5em);
-  background-color: #403652;
+  font-size: clamp(0.4em, 0.8em, 1.5em);
   border-radius: 5px;
   color: white;
 }
@@ -256,10 +247,16 @@ body {
   gap: 10%;
 }
 
+
+
+
+
+
+
 #submitBtn {
   grid-area: submit;
-  background-color: #403652;
   border: none;
+  background: none;
   border-radius: 5px;
   color: white;
   font-size: clamp(1em, 1.1em, 3em);
@@ -273,7 +270,7 @@ body {
   grid-area: results;
   gap: 6px;
   display: flex;
-  font-size: clamp(1.5em, 1.9em, 2.1em);
+  font-size: clamp(1em, 1em, 2em);
   align-items: center;
   flex-direction: column;
 }
@@ -289,9 +286,8 @@ body {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-    "textbox submit"
-    "charSize . ";
-  gap: 0px 7px;
+      "textbox submit"
+      "charSize .";
   justify-items: end;
 }
 
@@ -299,12 +295,11 @@ body {
   grid-area: header;
 }
 .resetBtn {
-  grid-area: reset;
+  grid-area: reset / reset / reset / reset;
   border: none;
   background: transparent;
   cursor: pointer;
-  font-size: clamp(0.4em, 1.1em, 1.5em);
-  background-color: #403652;
+  font-size: clamp(0.4em, 0.8em, 1.5em);
   border-radius: 5px;
   color: white;
 }
@@ -344,24 +339,54 @@ body {
 
 
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 900px) and (max-width: 1027px) {
+  .buttonContainer {
+    grid-template-columns: repeat(2, auto);
+  }
   #gamePlayContainer {
-    width: 40em;
+    width: 55%;
   }  
-  #savedHS{
-    font-size: clamp(1em, 1.3em, 2em);
+  #savedHS {
+    font-size: clamp(1em, 1em, 2em);
   }
 }
 
 @media only screen and (max-width: 899px) {
   #gamePlayContainer {
+    width: 90%;
     grid-template-rows: auto 0.4fr auto 1fr auto 1fr auto 1fr auto 24px;
   }
+  .buttonContainer {
+    grid-template-columns: repeat(1, auto);
+}
+#quizWord{font-size: clamp(5em, 4vw, 10em);}
 
 }
+
+
+@media only screen and (min-width: 600px) and (max-width: 898px) {
+  .buttonContainer {
+    grid-template-columns: repeat(2, auto);
+  }
+  #gamePlayContainer {
+    width: 75%;
+  }  
+  #savedHS {
+    font-size: clamp(1em, 1em, 2em);
+  }
+}
+
+
+
 @media only screen and (max-width: 375px) {
   #logo {
     font-size: clamp(2.3rem, 4vw, 3rem);
   }
-
+  #quizWord{font-size: clamp(5em, 4vw, 10em);}
+  .buttonContainer {
+    grid-template-columns: repeat(1, auto);
+}
+#gamePlayContainer {
+  width: 95%;
+}  
 }

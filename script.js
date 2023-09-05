@@ -50,6 +50,7 @@ function userNameLength() {
 
 //This function triggers the game, adds scaling on the first quizWord and triggers the timer function every second
 function triggerGame() {
+  savedHS.style.visibility = "hidden";
   countdown = 20;
   lastScore = 0;
   gameEndContainer.style.visibility = "hidden";
@@ -69,7 +70,7 @@ function triggerGame() {
   timerInterval = setInterval(updateTimer, 1000);
 }
 
-//Decrements the clock by one, sets a time warning colour and stops at 0s.
+//Decrements the clock by one and stops at 0s.
 function updateTimer() {
   clockText.textContent = countdown;
   if (countdown > 5) {
@@ -190,7 +191,7 @@ function endOfRound() {
   gameEndContainer.style.visibility = "visible";
   scoreText.innerText = `Score: ${lastScore}`;
 }
-
+// Update highscore
 function highScore() {
   const storedScore = localStorage.getItem("highScore") || 0;
   if (lastScore > storedScore) {
